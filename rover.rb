@@ -67,3 +67,18 @@ rover1.read_instruction("M")
 rover1.read_instruction("M")
 
 puts rover1.inspect
+
+rover2 = Rover.new(3, 3, "E")
+
+rover2.read_instruction("M")
+rover2.read_instruction("M")
+rover2.read_instruction("R")
+rover2.read_instruction("M")
+rover2.read_instruction("M")
+rover2.read_instruction("R")
+rover2.read_instruction("M")
+rover2.read_instruction("R")
+rover2.read_instruction("R")
+rover2.read_instruction("M")
+
+puts rover2.inspect
