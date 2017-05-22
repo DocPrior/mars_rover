@@ -59,5 +59,11 @@ rover1 = Rover.new(1, 2, "N")
 rover1.read_instruction("L")
 rover1.read_instruction("M")
 rover1.read_instruction("L")
+rover1.read_instruction("M")
+rover1.read_instruction("L")
+rover1.read_instruction("M")
+rover1.read_instruction("L")
+rover1.read_instruction("M")
+rover1.read_instruction("M")
 
 puts rover1.inspect
