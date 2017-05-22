@@ -1,5 +1,5 @@
 class Rover
-
+  attr_accessor :x, :y, :dir
   def initialize(x, y, dir)
     @x = x
     @y = y
@@ -7,16 +7,18 @@ class Rover
   end
 
   def read_instruction(inst)
-    if (inst == "L") || (inst == "R")
-      turn
-    end
+    inst.each do
+      if (inst == "L") || (inst == "R")
+        turn
+      end
 
-    if inst == "M"
-      move
+      if inst == "M"
+        move
+      end
     end
   end
 
-  def moveS
+  def move
     if dir == "N"
       @y += 1
     end
@@ -31,7 +33,7 @@ class Rover
     end
   end
 
-  def turn 
+  def turn
     if inst == "L"
       if @dir == "N"
         @dir = "W"
@@ -42,18 +44,19 @@ class Rover
       else
         @dir = "N"
       end
+    end
 
-      if inst == "R"
-        if @dir == "N"
-          @dir = "E"
-        elsif @dir == "E"
-          @dir = "S"
-        elsif @dir == "S"
-          @dir = "W"
-        else
-          @dir = "N"
-        end
+    if inst == "R"
+      if @dir == "N"
+        @dir = "E"
+      elsif @dir == "E"
+        @dir = "S"
+      elsif @dir == "S"
+        @dir = "W"
+      else
+        @dir = "N"
       end
     end
   end
+
 end
