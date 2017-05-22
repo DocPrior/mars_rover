@@ -7,33 +7,27 @@ class Rover
   end
 
   def read_instruction(inst)
-    inst.each do
       if (inst == "L") || (inst == "R")
-        turn
-      end
-
-      if inst == "M"
+        turn(inst)
+      else
         move
       end
-    end
+
   end
 
   def move
-    if dir == "N"
+    if @dir == "N"
       @y += 1
-    end
-    if dir == "W"
+    elsif @dir == "W"
       @x -= 1
-    end
-    if dir == "E"
+    elsif @dir == "E"
       @x += 1
-    end
-    if dir == "S"
+    else
       @y -= 1
     end
   end
 
-  def turn
+  def turn(inst)
     if inst == "L"
       if @dir == "N"
         @dir = "W"
@@ -58,5 +52,12 @@ class Rover
       end
     end
   end
-
 end
+
+rover1 = Rover.new(1, 2, "N")
+
+rover1.read_instruction("L")
+rover1.read_instruction("M")
+rover1.read_instruction("L")
+
+puts rover1.inspect
